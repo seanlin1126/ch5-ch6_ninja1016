@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+
 
 public class playercontroller : MonoBehaviour
 {
@@ -19,10 +21,11 @@ public class playercontroller : MonoBehaviour
         Application.targetFrameRate = 60;
         move = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
-    void Update()
+    async Task Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -50,6 +53,10 @@ public class playercontroller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("menu");
+        }
+        if (transform.position.x<5.87&& transform.position.x>4.67 && transform.position.y<1.47)
+        {
+            SceneManager.LoadScene("ch6_gamescene");
         }
 
     }

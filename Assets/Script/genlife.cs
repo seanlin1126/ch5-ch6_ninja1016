@@ -6,7 +6,7 @@ using UnityEngine;
 public class genlife : MonoBehaviour
 {
     public GameObject life;
-    float span = 10.0f;
+    float span = 5.0f;
     float delta = 0;
     // Start is called before the first frame update
     void Start()
